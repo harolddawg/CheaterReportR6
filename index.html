@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheater Report Form</title>
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 80%;
+      max-width: 500px;
+    }
+    .input-field {
+      margin: 10px 0;
+      width: 100%;
+    }
+    .input-field input {
+      width: 90%;
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+    .ads {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      text-align: center;
+      padding-top: 20px;
+    }
+    .ads.left { left: 0; }
+    .ads.right { right: 0; }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    #thankyou {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="ads left">
+    <!-- AdSense Left -->
+    <ins class="adsbygoogle"
+         style="display:block;width:120px;height:600px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <div class="ads right">
+    <!-- AdSense Right -->
+    <ins class="adsbygoogle"
+         style="display:block;width:120px;height:600px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="2222222222"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <div class="container">
+    <div id="form">
+      <div class="input-field">
+        <input type="text" id="cheaterName" placeholder="Cheater name">
+      </div>
+      <div class="input-field">
+        <input type="text" id="matchId" placeholder="Match id">
+      </div>
+      <div class="input-field">
+        <input type="text" id="region" placeholder="Region">
+      </div>
+      <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <div id="thankyou">
+      <h2>Thank you for your submission!</h2>
+      <button onclick="newSubmission()">Create another submission</button>
+    </div>
+  </div>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('cheaterName').value.trim();
+      const matchId = document.getElementById('matchId').value.trim();
+      const region = document.getElementById('region').value.trim();
+
+      if (name && matchId && region) {
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('thankyou').style.display = 'block';
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+
+    function newSubmission() {
+      document.getElementById('cheaterName').value = '';
+      document.getElementById('matchId').value = '';
+      document.getElementById('region').value = '';
+      document.getElementById('form').style.display = 'block';
+      document.getElementById('thankyou').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
